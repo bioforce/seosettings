@@ -4,7 +4,7 @@
 Install package via composer
 
 ```bash
-composer require bioforce/seosettings --dev
+composer require bioforce/seosettings
 ```
 
 Publishing files
