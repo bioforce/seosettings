@@ -32,7 +32,7 @@ In blade just add
 Config in config/seo-settings.php
 
 ```php
-	/**
+    /**
      * Root admin path
      */
     'path' => 'admin',
@@ -45,4 +45,5 @@ Config in config/seo-settings.php
         'auth',
     ]
 ```
-And just enjoy
+
+Go to your site: site.com{seo-settings.path}/seo and just enjoy
