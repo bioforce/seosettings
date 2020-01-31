@@ -1,0 +1,29 @@
+{
+    "name": "bioforce/seosettings",
+    "description": "Laravel Meta tags admin panel",
+    "keywords": ["laravel", "seo", "admin", "meta", "metatags"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aliaksandr Pahanko",
+            "email": "bioforce985@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bioforce\\SeoSettings\\SeoSettingsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Bioforce\\SeoSettings\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
