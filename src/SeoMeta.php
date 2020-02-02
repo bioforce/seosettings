@@ -18,7 +18,7 @@ class SeoMeta
         'settings' => 'bf_meta_settigs_',
         'tags' => 'bf_meta_tags'
     ];
-    
+
     /**
      * Get all Routes with filled
      *
@@ -80,7 +80,7 @@ class SeoMeta
 
     /**
      * Get settings by uri
-     * 
+     *
      * @param string
      *
      * @return SeoSetting
@@ -95,7 +95,7 @@ class SeoMeta
 
     /**
      * Get list of metatags group with tags
-     * 
+     *
      * @return SeoTagGroup
      */
     private function getMetaTags(){
@@ -131,7 +131,7 @@ class SeoMeta
         if(is_null($seoManager)){
             return $returnArray;
         }
-                
+
         $modelItem = $this->getModelItem($route->parameters, $seoManager->model);
         $seoManager = $seoManager->toArray();
         $modelMap = $this->mappingModel($modelItem);
@@ -163,10 +163,10 @@ class SeoMeta
 
     /**
      * Get filled tag array from array by id
-     * 
+     *
      * @param array
      * @param string $tagId
-     * 
+     *
      * @return array
      */
     private function getFillTagArray($seoManagerTagsArray, $tagId)
@@ -219,11 +219,11 @@ class SeoMeta
     {
         $keys = array_keys($array);
 
-        //Map keys to format function
         $keys = array_map(function ($key){ return "{".$key."}"; }, $keys);
 
-        //Use array_combine to map formatted keys to array values
-        return array_combine($keys,$array);
+        return Arr::where(array_combine($keys,$array), function ($value, $key) {
+            return is_string($value);
+        });
     }
 
     /**
